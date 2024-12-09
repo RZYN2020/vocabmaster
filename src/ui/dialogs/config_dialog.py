@@ -15,7 +15,6 @@ class ConfigDialog(QDialog):
     def __init__(self, config_path: str, parent=None):
         super().__init__(parent)
         self.config_manager = ConfigManager(config_path, validate=False)
-        self.api_handler = APIHandler(config_path)
         
         self.setWindowTitle("VocabMaster Settings")
         self.setMinimumWidth(500)
@@ -201,8 +200,8 @@ class ConfigDialog(QDialog):
         try:
             updates = self.get_config_updates()
             self.config_manager.save_config(updates)
-            
-            result = self.api_handler.generate_examples("test", count=1)
+            api_handler = APIHandler(self.config_manager.config_path)
+            _ = api_handler.generate_examples("test", count=1)
             QMessageBox.information(self, "Success", "API connection test successful!")
         except Exception as e:
             QMessageBox.warning(self, "Error", f"Connection test failed: {str(e)}")
