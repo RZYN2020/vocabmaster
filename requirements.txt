@@ -1,0 +1,6 @@
+# Core dependencies
+anki>=2.1.50
+openai==1.57.0
+markdown2>=2.4.0
+requests>=2.31.0
+PyJWT>=2.8.0

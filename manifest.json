@@ -1,0 +1,11 @@
+{
+    "package": "vocab_master",
+    "name": "Vocab Master",
+    "mod": 2,
+    "min_point_version": 0,
+    "max_point_version": 0,
+    "branch_index": 0,
+    "disabled": false,
+    "dependencies": ["openai", "markdown2", "PyQt6", "requests"],
+    "conflicts": []
+}

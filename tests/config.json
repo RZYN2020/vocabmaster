@@ -1,0 +1,9 @@
+{
+    "api_provider": "ChatGLM",
+    "temperature": 0.7,
+    "max_retries": 3,
+    "retry_delay": 1,
+    "timeout": 60,
+    "chatglm_model": "glm-4",
+    "chatglm_api_key": "712dbf03957e42415deca45f8c28a1a8.TstCdiQkiK7hfh13"
+}

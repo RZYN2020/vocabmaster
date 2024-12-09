@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Virtual environments
+venv/
+env/
+
+# Bundled dependencies
+vocab_master/libs/
+
+# IDE
+.vscode/
+.idea/
