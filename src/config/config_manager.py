@@ -39,11 +39,11 @@ class ConfigManager:
         'timeout': 60
     }
 
-    def __init__(self, config_path: str):
+    def __init__(self, config_path: str, validate: bool = True):
         self.config_path = config_path
-        self._config = self.load_config()
+        self._config = self.load_config(validate = validate)
 
-    def load_config(self) -> Dict[str, Any]:
+    def load_config(self, validate: bool = True) -> Dict[str, Any]:
         """Load configuration from file"""
         try:
             if os.path.exists(self.config_path):
@@ -51,7 +51,8 @@ class ConfigManager:
                     loaded_config = json.load(f)
                     config = self.DEFAULT_CONFIG.copy()
                     config.update(loaded_config)
-                    self._validate_config(config)
+                    if validate:
+                        self._validate_config(config)
                     return config
             return self.DEFAULT_CONFIG.copy()
         except json.JSONDecodeError as e:

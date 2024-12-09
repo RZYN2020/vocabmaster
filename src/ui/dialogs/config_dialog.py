@@ -14,7 +14,7 @@ class ConfigDialog(QDialog):
 
     def __init__(self, config_path: str, parent=None):
         super().__init__(parent)
-        self.config_manager = ConfigManager(config_path)
+        self.config_manager = ConfigManager(config_path, validate=False)
         self.api_handler = APIHandler(config_path)
         
         self.setWindowTitle("VocabMaster Settings")
